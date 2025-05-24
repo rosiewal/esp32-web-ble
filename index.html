@@ -127,9 +127,9 @@
     }
 
     function handleCharacteristicChange(event){
-        //const newValueReceived = new TextDecoder().decode(event.target.value);
-        const newValueReceived = event.target.value;
-        console.log("Characteristic value changed: ", newValueReceived);
+        const newValueReceived = new TextDecoder().decode(event.target.value);
+        
+        console.log("Characteristic value changed: ", parseInt(newValueReceived));
         retrievedValue.innerHTML = newValueReceived;
         timestampContainer.innerHTML = getDateTime();
     }
